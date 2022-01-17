@@ -12,7 +12,7 @@
         <h1 class="workspace_name">
             Test name
         </h1>
-        <button class="btn addNewDoard" id="addNewDoard">+</button>
+        <button class="btn addNewDoard" id="addNewDoard">Add New Board</button>
         <ul class="user__group">
            <li class="user__item"><img src="" alt=""></li> 
            <button class="addUser" id="addUser">+</button>
@@ -25,7 +25,7 @@
     <main class="main">
         <section class="board">
             <h2 class="board__title">To do</h2>
-            <button class="btn">Добавить новою карточку</button>
+            <button class="btn createCard__btn">Добавить новою карточку</button>
             <button class="btn">Удалить доску</button>
             <div class="card__zone">
                 <div class="card">
@@ -45,7 +45,7 @@
         </section>
         <section class="board">
             <h2 class="board__title">In progress</h2>
-            <button class="btn">Добавить новою карточку</button>
+            <button class="btn createCard__btn" onclick="">Добавить новою карточку</button>
             <button class="btn">Удалить доску</button>
             <div class="card__zone">
                 <div class="card">
@@ -65,8 +65,8 @@
         </section>
         <section class="board">
             <h2 class="board__title">Done</h2>
-            <button class="btn">Добавить новою карточку</button>
-            <button class="btn">Удалить доску</button>
+            <button class="btn createCard__btn">Add another task</button>
+            <button class="btn">Delete board</button>
             <div class="card__zone">
                 <div class="card">
                     <h3 class="card__title">card</h3>
@@ -83,7 +83,36 @@
                 </div>
             </div>
         </section>
+        <div class="modal__group">
+            <div class="modal__createBoard">
+                <h3>Enter board name</h3>
+                <input type="text" class="board__name" placeholder="Max 20 symbols" maxlength="20">
+                <div class="btn__group">
+                    <button class="btn create__btn">Create</button>
+                    <button class="btn modal__close__btn" >Close</button> 
+                </div>
+            </div>
+            <div class="modal__newCard">
+                <label > Card title 
+                    <input type="text" maxlength="20">
+                </label>
+                <label >Expired date<input type="date"></label>
+                <label >Description 
+                    <textarea name="" id="" cols="30" rows="10" maxlength="2000">
+                    </textarea>
+                </label>
+                <label for="">Tag
+                    <select name="" id="" multiple >
+                        <option value="">first tag</option>
+                    </select>
+                </label>
+                <button class="btn create__btn"> Create</button>
+                <button class="btn modal__close__btn"> Close</button>
+                
+            </div>
+        </div>
     </main>
+    <script src="modal.js"></script>
     <script src="main.js"></script>    
 </body>
 </html>
