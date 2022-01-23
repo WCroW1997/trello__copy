@@ -55,10 +55,12 @@ addUserBtn.addEventListener('click' , () => {
 
 // let userClose = document.querySelectorAll('.user__list')
 
-// let userClose = document.querySelectorAll('.user__list')
-//                 for (let index = 0; index < userClose.length; index++) {
-//                     const element = userClose[index];
-//                     element.addEventListener('click', ()=>{
-//                         deleteList(li, userClose) 
-//                     })
-//                 }
+let userClose = document.querySelectorAll('.user__list')
+
+for (let index = 0; index < userClose.length; index++) {
+    const element = userClose[index];
+    element.addEventListener('click', () => {
+        deleteList(li, userClose)
+        alert(21)
+    })
+}

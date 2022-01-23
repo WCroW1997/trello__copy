@@ -44,14 +44,20 @@ body{
     background: rgb(141, 141, 141);
     border-radius: 16px;
     padding: 20px;
+    min-height: 300px;
 }
 
 .card{
     background: #fff;
-    margin:  20px 0;
+    margin-bottom:  20px;
     border: 2px solid grey;
     border-radius: 8px;
     padding: 10px;
+}
+
+.card__zone{
+    min-height: 50px;
+    margin-top: 20px;
 }
 
 .main{

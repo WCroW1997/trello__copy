@@ -35,10 +35,11 @@ showModalBoardBtn.addEventListener("click", () => {
         closeCreateModal()
         createBoardBtn.removeEventListener('click', handleBoardClick)
     })
+    dragNdrop()
 })
 
 //создание карточки
-
+// Карточка не выводится на монитор
 const createBoardCard = index => {
 
     const createCardBtn = document.querySelector('.create__card__btn')
@@ -46,13 +47,12 @@ const createBoardCard = index => {
     showCardModal()
 
     function handleCreateButtonClick() {
-        
         let cardName = cardTitle.value
         let cardDiscription = cardText.value
         let cardTagValue = cardTag.value
         cardArr.push(new cardAdd(cardName, cardDiscription, cardTagValue))
-        addLocal()
         fillCard()
+        addLocal()
         closeCardModal()
         createCardBtn.removeEventListener('click', handleCreateButtonClick)
     }
@@ -63,14 +63,16 @@ const createBoardCard = index => {
         closeCardModal()
         createCardBtn.removeEventListener('click', handleCreateButtonClick)
     })
+    dragNdrop()
 }
+
 
 
 const fillCard = () => {
     cardZone.innerHTML = ''
     if (cardArr.length > 0) {
-        cardArr.forEach((item, index) => {
-            cardZone.innerHTML += createCard(item, index)
+        cardArr.forEach((item) => {
+            cardZone.innerHTML += createCard(item)
         })
     }
 }
@@ -97,7 +99,7 @@ const fillMainBoard = () => {
 
 // создание элементов
 
-const createCard = (cardArr, index) => {
+const createCard = (cardArr) => {
     return `
             <div class="card" draggable="true">
                 <h3 class="card__title" maxlength="20">${cardArr.title}</h3>
@@ -126,21 +128,31 @@ const createBoard = (boardArr, index) => {
 
 const createMainBoard = (index) => {
     return `
-        <section class="main__board">
+        <section class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">To do</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Добавить новою карточку</button>
             <div class="card__zone">
-                
+                <div class="card" draggable="true">
+                    <h3 class="card__title" maxlength="20">${cardArr.title}</h3>
+                    <span class="label tag">${cardArr.tag}</span>
+                    <div class="card__user">
+                        <img src="" alt="">
+                        <div class="user__info">
+                            <h4 class="user__name">${userName}</h4>
+                            <p class="user__gender">${userSex}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="main__board">
+        <section class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">In progress</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Добавить новою карточку</button>
             <div class="card__zone">
                 
             </div>
         </section>
-        <section  class="main__board">
+        <section  class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">Done</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Add another task</button>
             <div class="card__zone">
@@ -155,5 +167,5 @@ const createMainBoard = (index) => {
 
 addLocal()
 fillBoard()
-fillCard()
 fillMainBoard()
+fillCard()
