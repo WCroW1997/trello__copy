@@ -85,7 +85,7 @@ body{
 .modal__group{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: rgba(135, 135, 135, 0.25);
     display: none;
     justify-content: center;
