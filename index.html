@@ -9,12 +9,11 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="workspace_name">
+        <h1 contenteditable="true" class="workspace_name" maxlength="20">
             Test name
         </h1>
         <button class="btn addNewDoard" id="addNewDoard">Add New Board</button>
         <ul class="user__group">
-           <li class="user__item"><img src="" alt=""></li> 
            <button class="addUser" id="addUser">+</button>
         </ul>
         <select name="" id="">
@@ -23,65 +22,10 @@
         <button class="btn setting__btn" id="setting__btn">Setting</button>
     </header>
     <main class="main">
-        <section class="board">
-            <h2 class="board__title">To do</h2>
-            <button class="btn createCard__btn">Добавить новою карточку</button>
-            <button class="btn">Удалить доску</button>
-            <div class="card__zone">
-                <div class="card">
-                    <h3 class="card__title">card</h3>
-                    <p class="discriprion">Card text</p>
-                    <span class="label tag">first tag</span>
-                    <span class="label date">31/01/22</span>
-                    <div class="card__user">
-                        <img src="" alt="">
-                        <div class="user__info">
-                            <h4 class="user__name">Stiven</h4>
-                            <p class="user__gender">Male</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="board">
-            <h2 class="board__title">In progress</h2>
-            <button class="btn createCard__btn" onclick="">Добавить новою карточку</button>
-            <button class="btn">Удалить доску</button>
-            <div class="card__zone">
-                <div class="card">
-                    <h3 class="card__title">card</h3>
-                    <p class="discriprion">Card text</p>
-                    <span class="label tag">first tag</span>
-                    <span class="label date">31/01/22</span>
-                    <div class="card__user">
-                        <img src="" alt="">
-                        <div class="user__info">
-                            <h4 class="user__name">Stiven</h4>
-                            <p class="user__gender">Male</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="board">
-            <h2 class="board__title">Done</h2>
-            <button class="btn createCard__btn">Add another task</button>
-            <button class="btn">Delete board</button>
-            <div class="card__zone">
-                <div class="card">
-                    <h3 class="card__title">card</h3>
-                    <p class="discriprion">Card text</p>
-                    <span class="label tag">first tag</span>
-                    <span class="label date">31/01/22</span>
-                    <div class="card__user">
-                        <img src="" alt="">
-                        <div class="user__info">
-                            <h4 class="user__name">Stiven</h4>
-                            <p class="user__gender">Male</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="main__board__group"></section>
+        <section class="board__group">
+            
+            
         </section>
         <div class="modal__group">
             <div class="modal__createBoard">
@@ -94,26 +38,32 @@
             </div>
             <div class="modal__newCard">
                 <label > Card title 
-                    <input type="text" maxlength="20">
+                    <input class="card__name" type="text" maxlength="20">
                 </label>
                 <label >Expired date<input type="date"></label>
                 <label >Description 
-                    <textarea name="" id="" cols="30" rows="10" maxlength="2000">
-                    </textarea>
+                    <textarea class="card__text" name="" id="" cols="30" rows="10" maxlength="2000"></textarea>
                 </label>
                 <label for="">Tag
-                    <select name="" id="" multiple >
-                        <option value="">first tag</option>
+                    <select name="" id="" multiple class="card__tag">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                     </select>
                 </label>
-                <button class="btn create__btn"> Create</button>
-                <button class="btn modal__close__btn"> Close</button>
+                <button class="btn create__card__btn"> Create</button>
+                <button class="btn modalCard__close__btn"> Close</button>
                 
             </div>
         </div>
     </main>
     <script src="js/modal.js"></script>
-    <script src="js/main.js"></script>   
-    <script src="js/date.js"></script> 
+    <script src="js/localStorage.js"></script> 
+    <!-- <script src="js/create.js"></script> -->
+    <script src="js/getuser.js"></script>
+    <script src="js/main.js"></script>  
+
+
 </body>
 </html>

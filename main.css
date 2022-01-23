@@ -6,12 +6,24 @@
 
 body{
     padding: 0 20px;
+    background: rgb(88, 172, 241);
 }
 
 .header{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    gap: 20px;
+    height: 100px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.setting__btn{
+    display: flex;
+    position: relative;
+    right: 0;
 }
 
 .btn{
@@ -23,26 +35,34 @@ body{
 .addUser{
     border-radius: 100%;
     border: none;
-    padding: 10px 15px;
+    width: 50px;
+    height: 50px;
 }
 
-.board{
-    width: 400px;
-    border-right: 2px solid grey;
-    height: 90vh;
+.board, .main__board{
+    width: 300px;
+    background: rgb(141, 141, 141);
+    border-radius: 16px;
+    padding: 20px;
 }
 
 .card{
-    margin: 20px;
+    background: #fff;
+    margin:  20px 0;
     border: 2px solid grey;
     border-radius: 8px;
     padding: 10px;
 }
 
 .main{
+    position: relative;
     display: flex;
     gap: 10px;
-    position: relative;
+}
+
+.board__group, .main__board__group{
+    display: flex;
+    gap: 10px;
 }
 
 /* .modal__createBoard , .modal__newCard{
@@ -92,4 +112,62 @@ body{
 .btn__group{
     display: flex;
     gap: 15px;
+}
+
+.user__group{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    /* position: relative; */
+}
+
+.user__img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.user__group li{
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+.user__info{
+    width: 100px;
+    background: rgb(248, 248, 248);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    /* left: -30%; */
+    z-index: 2;
+}
+
+
+
+.user__list:hover::before{
+    content: 'X';
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(0,0,0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    color: #fff;
+    /* top: 0;
+    right: 0; */
+}
+
+.user__list:hover > .user__info{
+    display: flex;
 }
