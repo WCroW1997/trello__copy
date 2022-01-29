@@ -2,7 +2,7 @@
 let draggableItem = null
 
 function dragNdrop() {
-    let boards = document.querySelectorAll('.card__zone')
+    let zones = document.querySelectorAll('.card__zone')
     let cards = document.querySelectorAll('.card')
 
     for (let index = 0; index < cards.length; index++) {
@@ -22,17 +22,17 @@ function dragNdrop() {
             }, 0)
         })
 
-        for (let j = 0; j < boards.length; j++) {
-            const board = boards[j]
+        for (let j = 0; j < zones.length; j++) {
+            const zone = zones[j]
 
-            board.addEventListener('dragover', e =>e.preventDefault() )
+            zone.addEventListener('dragover', e => e.preventDefault() )
 
-            board.addEventListener('dragenter', function(e) {
+            zone.addEventListener('dragenter', function(e) {
                 e.preventDefault()
                 this.style.backgroundColor = 'rgba(0,0,0, .3)'
             } )
 
-            board.addEventListener('drop', function(e) {
+            zone.addEventListener('drop', function(e) {
                 this.style.backgroundColor = 'rgba(0,0,0, 0)'
                 this.append(draggableItem)
             })

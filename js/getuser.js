@@ -15,6 +15,7 @@ function deleteList(parent, el) {
 const ul = document.querySelector('.user__group');
 const url = 'https://randomuser.me/api/?results=1';
 
+
 const getUserInfo = () => {
     fetch(url)
         .then((resp) => resp.json())
@@ -49,7 +50,10 @@ const getUserInfo = () => {
 getUserInfo()
 
 addUserBtn.addEventListener('click' , () => {
-    getUserInfo()
+    let userList = document.querySelectorAll('.user__list')
+    if (userList.length < 10) {
+        getUserInfo()
+    } 
 }) 
 
 
