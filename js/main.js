@@ -61,7 +61,13 @@ const createBoardCard = () => {
             createCardBtn.removeEventListener('click', handleCreateButtonClick)
         } 
 
-        createCardBtn.addEventListener("click", handleCreateButtonClick)
+        let cards = document.querySelectorAll('.card')
+        if (cards.length < 10) {
+            createCardBtn.addEventListener("click", handleCreateButtonClick)
+        } else {
+            closeCardModal()
+        }
+        
 
         closeModalCardBtn.addEventListener("click", () => {
             closeCardModal()
@@ -132,6 +138,7 @@ const createBoard = (boardArr, index) => {
             <h2 contenteditable="true" class="board__title" maxlength="20">${boardArr.name}</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Добавить новою карточку</button>
             <button class="btn" onclick="deleteBoard">Удалить доску</button>
+            <input type="color" name="Trello__color" class="board__color">
             <div class="card__zone">
             </div>
         </section>
@@ -143,6 +150,7 @@ const createMainBoard = ( index) => {
         <section class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">To do</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Добавить новою карточку</button>
+            <input type="color" name="Trello__color" class="board__color">
             <div class="card__zone">
                 <div class="card" draggable="true">
                     <h3 class="card__title" maxlength="20">${cardArray.title}</h3>
@@ -160,6 +168,7 @@ const createMainBoard = ( index) => {
         <section class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">In progress</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Добавить новою карточку</button>
+            <input type="color" name="Trello__color" class="board__color">
             <div class="card__zone">
                 
             </div>
@@ -167,6 +176,7 @@ const createMainBoard = ( index) => {
         <section  class="main__board board">
             <h2 contenteditable="true" class="main__board__title" maxlength="20">Done</h2>
             <button class="btn createCard__btn" onclick="createBoardCard(${index})">Add another task</button>
+            <input type="color" name="Trello__color" class="board__color">
             <div class="card__zone">
             
             </div>
