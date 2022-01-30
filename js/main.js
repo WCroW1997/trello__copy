@@ -163,17 +163,6 @@ const createMainBoard = ( elem) => {
             <button class="btn createCard__btn" onclick="createBoardCard(${elem})">Добавить новою карточку</button>
             <input type="color" name="Trello__color" class="board__color">
             <div class="card__zone">
-                <div class="card" draggable="true">
-                    <h3 class="card__title" maxlength="20">${cardArray.title}</h3>
-                    <span class="label tag">${cardArray.tag}</span>
-                    <div class="card__user">
-                        <img src="" alt="">
-                        <div class="user__info">
-                            <h4 class="user__name">${userName}</h4>
-                            <p class="user__gender">${userSex}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <section class="main__board board">
