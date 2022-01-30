@@ -6,6 +6,7 @@ let cardText = document.querySelector('.card__text')
 let cardTag = document.querySelector('.card__tag')
 let userName = document.querySelector('.user__name')
 let userSex = document.querySelector('.user__sex')
+
 const boardGroup = document.querySelector('.board__group')
 const mainBoardGroup = document.querySelector('.main__board__group')
 const cardZone = document.getElementsByClassName('card__zone')
@@ -14,7 +15,7 @@ const cardZone = document.getElementsByClassName('card__zone')
 showModalBoardBtn.addEventListener("click", () => {
     const boardCreateBtn = document.querySelector('.create__btn')
     const closeModalBoardBtn = document.querySelector('.modal__close__btn')
-
+    let boardCol = document.querySelectorAll('.board')
     showCreateModal()
 
     function handleBoardClick() {
@@ -27,7 +28,13 @@ showModalBoardBtn.addEventListener("click", () => {
         boardCreateBtn.removeEventListener('click', handleBoardClick)
     }
 
-    boardCreateBtn.addEventListener('click', handleBoardClick)
+    if (boardCol.length < 6) {
+        boardCreateBtn.addEventListener('click', handleBoardClick)
+    } else {
+        closeCreateModal()
+    }
+
+    
 
     closeModalBoardBtn.addEventListener("click", () => {
         const boardNameInput = document.querySelector('.board__name')
@@ -75,8 +82,7 @@ const createBoardCard = () => {
         })  
     })  
     dragNdrop()
-}
-    this.removeEventListener('click', createBoardCard)
+    }
     console.log(25)
 }
 
